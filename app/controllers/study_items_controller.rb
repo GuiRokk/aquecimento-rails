@@ -12,8 +12,9 @@ class StudyItemsController <ApplicationController
    end
 
    def create
-      si_params = study_item_params
-      @study_item = StudyItem.new(si_params)
+     #si_params = study_item_params
+      #@study_item = StudyItem.new(si_params)
+      @study_item = StudyItem.new(study_item_params)
       
       #ou faz isso
       #@study_item = StudyItem.new
@@ -49,7 +50,7 @@ class StudyItemsController <ApplicationController
       end
 
       def study_item_params
-         params.require(:study_item).permit(:title,:category,:done)
+         params.require(:study_item).permit(:title,:category_id,:done)
       end
 
 
