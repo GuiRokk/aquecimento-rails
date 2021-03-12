@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Diario de Estudos</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+  </head>
+
+  <body>
+  <%=render 'shared/nav' %>
+  <div class ="container">
+    <%=  alert %>
+    <%= yield %>
+    </div>
+    
+    <div class ='footer'>
+    <%= render 'footer'%>
+    </div>
+  </body>
+</html>
