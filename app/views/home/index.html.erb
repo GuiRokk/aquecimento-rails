@@ -1,12 +1,12 @@
-<ul>
 
-<%@study_items.each do |si| %>
-    <li>
-    <%#=link_to(si.category,study_item_path(si.category),class: 'button bouncy')%>
-    <%= link_to(si.full_title,study_item_path(si.id))%>
-    </li>
+
+<%if @study_items.empty?%>
+    Sem Itens de estudo
+<%else%>
+    
+    <%@study_items.each do |si| %>
+     <dt>     <%#=link_to(si.category,study_item_path(si.category),class: 'button bouncy')%>
+        <%= link_to(si.full_title,study_item_path(si.id), class: 'show button')%>
+       </dt>
+    <% end %>
 <% end %>
-</ul>
-
-
-<%= link_to('Cadastrar Novo Item',new_study_item_path) %>

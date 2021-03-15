@@ -4,7 +4,7 @@ class StudyItem < ApplicationRecord
     validates :title, presence: true
     
     def full_title
-        "#{title} - #{category}"
+        "#{title} - #{category.title}"
     end
 
     def done!
