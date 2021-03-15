@@ -1,25 +1,4 @@
 <h1>Cadastrar Item de Estudo</h1>
 
-    <%= form_with(model:@study_item) do |f| %>
-    <div>
-        <%= f.label :title,'Titulo' %>
-        <%= f.text_field :title, required:'required' %>
-    </div>
-
-    <div>
-        <%= f.label :category_id,'Categoria' %>
-        <%#= f.select :category_id, ['Ruby', 'Rails','Fundamentos'].sort, prompt: 'Escolha uma categoria' %>
-        <%= f.collection_select :category_id, Category.all, :id, :title %>
-    </div>
-    
-    <div>
-        <span>Feito?</span>
-        <%= f.label :done,'Sim' %>
-        <%= f.radio_button :done, 'true' %>
-        <%= f.label :done,'Não' %>
-        <%= f.radio_button :done, 'false' %>
-    </div>
-
-
-<%= f.submit %>
-<% end %>
+<%= render partial: 'form', locals: {study_item: @study_item}%>
+<!--passa para a partial, o valor da variavel, seguindo as boas práticas

@@ -6,4 +6,12 @@ class StudyItem < ApplicationRecord
     def full_title
         "#{title} - #{category}"
     end
+
+    def done!
+        update(done:true)
+    end
+
+    def not_done!
+        update(done:false)
+    end
 end

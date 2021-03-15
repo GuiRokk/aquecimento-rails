@@ -1,8 +1,7 @@
 class StudyItemsController <ApplicationController
    
    def show
-      id = params[:id]
-      @study_item = StudyItem.find(id)
+      set_study_item
       #category = params[:id]
       #@study_item = StudyItem.where(category: category)
    end
@@ -12,20 +11,20 @@ class StudyItemsController <ApplicationController
    end
 
    def create
-     #si_params = study_item_params
-      #@study_item = StudyItem.new(si_params)
       @study_item = StudyItem.new(study_item_params)
       
       #ou faz isso
       #@study_item = StudyItem.new
-      #@study_item.title = params[study_item][:title]
-      #@study_item.category = params[study_item][:category]
-      #@study_item.done = params[study_item][:done]
+      #@study_item.title = params[:study_item][:title]
+      #@study_item.category = params[:study_item][:category]
+      #@study_item.done = params[:study_item][:done]
       
       if @study_item.save
+         flash[:notice] = 'Novo item adicionado'
          redirect_to root_path
       else
-         flash[:alert] =  "Não foi possivel adcionar o item de estudo"
+         flash[:alert] =  'Não foi possivel adcionar o item de estudo'
+        
          render 'new'
       end
    end
@@ -37,12 +36,25 @@ class StudyItemsController <ApplicationController
    def update
       set_study_item
       if @study_item.update(study_item_params)
-         redirect_to  @study_item # ..to @study_item -> vai pro show   study_item_path(@study_item)
+         redirect_to  @study_item  #-> vai pro show do objeto, study_item_path(@study_item)
       else
          render :edit
       end
 
-   end 
+   end
+
+   def mark_as_done
+      set_study_item
+      if @study_item.done == false
+         @study_item.done!
+      else
+         @study_item.not_done!
+      end
+      redirect_to @study_item
+   end
+
+
+
    private
 
       def set_study_item

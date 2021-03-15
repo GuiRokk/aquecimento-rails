@@ -26,3 +26,9 @@
     text-align:center;
     position:relative;
 }
+
+
+
+div.field_with_errors input{
+    border: 1px solid red;
+    }
