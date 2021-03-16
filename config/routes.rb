@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   resources :study_items, only: [:show, :new, :create, :edit, :update] do
     patch 'mark_as_done', on: :member
   end
+
+  resources :categories, only: [:show, :new, :create]
               #model            mostrar  form e criar  form e atualizar
 
 end 

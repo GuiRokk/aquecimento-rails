@@ -2,9 +2,9 @@
 
 <%if @study_item.done? %>
   ==> Feito
-  <%= button_to 'Macar como desfeito', mark_as_done_study_item_path(@study_item), method: :patch, class: 'not_done button'%>
+  <%= button_to 'Macar como desfeito', mark_as_done_study_item_path(@study_item), method: :patch, class: 'not_done'%>
 <%else%>
-  <%= button_to 'Macar como feito', mark_as_done_study_item_path(@study_item), method: :patch, class: 'done button'%>
+  <%= button_to 'Macar como feito', mark_as_done_study_item_path(@study_item), method: :patch, class: 'done'%>
 <%end%>
 
 

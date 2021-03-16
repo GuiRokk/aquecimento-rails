@@ -9,18 +9,19 @@
     <%= stylesheet_link_tag 'application', media: 'all' %>
   </head>
 
-  <body>
-  <div class ='nav'>
-    <%=render 'shared/nav' %>
-  </div>
-  <div class ="container">
-    <%= notice %>
-    <%=  alert %>
-    <%= yield %>
+  <body class ='body'>
+    <div class ='nav'>
+      <%=render 'shared/nav' %>
     </div>
-    
+    <div class ="index">
+      <div><%= notice %></div>
+      <div><%=  alert %></div>
+      <%= yield %>
+    </div>
+
     <div class ='footer'>
-    <%= render 'footer'%>
+        <%= render 'footer'%>
     </div>
+
   </body>
 </html>

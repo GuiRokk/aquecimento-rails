@@ -17,8 +17,8 @@ class StudyItemsController <ApplicationController
       #@study_item = StudyItem.new
       #@study_item.title = params[:study_item][:title]
       #@study_item.category = params[:study_item][:category]
-      #@study_item.done = params[:study_item][:done]
-      
+      @study_item.done = 0
+   
       if @study_item.save
          flash[:notice] = 'Novo item adicionado'
          redirect_to root_path

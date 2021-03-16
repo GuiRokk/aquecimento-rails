@@ -5,8 +5,8 @@
 <%else%>
     
     <%@study_items.each do |si| %>
-     <dt>     <%#=link_to(si.category,study_item_path(si.category),class: 'button bouncy')%>
-        <%= link_to(si.full_title,study_item_path(si.id), class: 'show button')%>
+        <dt>     <%#=link_to(si.category,study_item_path(si.category),class: 'button bouncy')%>
+        <%= link_to(si.full_title,study_item_path(si.id), class: 'button')%>
        </dt>
     <% end %>
 <% end %>
