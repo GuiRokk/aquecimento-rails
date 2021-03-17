@@ -1,8 +1,8 @@
- <%= form_with model:@category do |f|%>
+<%= form_with model:@category do |f|%>
     <div>
         <%= f.label :title,'Titulo' %>
         <%= f.text_field :title, required:'required' %>
-    </div>
+    </div><br>
 
-<%= f.submit 'Salvar',class: 'button'%>
+    <%= f.submit 'Salvar',class: 'button'%><br>
 <% end %>

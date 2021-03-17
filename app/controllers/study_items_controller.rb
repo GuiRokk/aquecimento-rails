@@ -23,7 +23,7 @@ class StudyItemsController <ApplicationController
          flash[:notice] = 'Novo item adicionado'
          redirect_to root_path
       else
-         #uts '\n\n\n =================='
+         #puts '\n\n\n =================='
          #puts @study_item.errors.messages #--> mostra no terminal as mensagens de erro do processo
          flash[:alert] =  'Não foi possivel adcionar o item de estudo'
          render 'new'

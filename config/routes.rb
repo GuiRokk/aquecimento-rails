@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   resources :study_items, only: [:show, :new, :create, :edit, :update] do
     patch 'mark_as_done', on: :member
+    post 'import_csv', on: :member
   end
 
   resources :categories, only: [:show, :new, :create]
